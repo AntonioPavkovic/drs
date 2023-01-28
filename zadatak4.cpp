@@ -28,7 +28,7 @@ void philosopher(int id, unique_ptr<mutex[]> &forks, vector<string> &states)
     {
         states[id] = "O";
 
-        cout << "stanje filozofa " << id << ": ";
+        cout << "stanje filozofa: ";
         for (int i = 0; i < states.size(); i++)
         {
             cout << states[i] << " ";
@@ -41,7 +41,7 @@ void philosopher(int id, unique_ptr<mutex[]> &forks, vector<string> &states)
         forks[(id + 1) % states.size()].lock();
 
         states[id] = "X";
-        cout << "stanje filozofa: " << id << ": ";
+        cout << "stanje filozofa: ";
         for (int i = 0; i < states.size(); i++)
         {
             cout << states[i] << " ";

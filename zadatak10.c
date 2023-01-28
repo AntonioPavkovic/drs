@@ -22,7 +22,7 @@ int main(void) {
     c[i] = i*3;
   }
   
-#pragma omp parallel num_threads(6) shared(x, y, z, c, zb) private(i) reduction(+:sum)
+#pragma omp parallel num_threads(4) shared(x, y, z, c, zb) private(i) reduction(+:sum)
 {
   #pragma omp for ordered
   for (int i = 0; i < N; i++) 
